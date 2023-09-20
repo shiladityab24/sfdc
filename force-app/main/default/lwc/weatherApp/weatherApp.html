@@ -5,6 +5,9 @@
           <header class="flex-center">
             <h1>Weather App</h1>
           </header>
+          <template if:true={loadingText}>
+            <div class={loadingClasses}>{loadingText}</div>
+          </template>
           <section class="slds-m-around_large">
             <form onsubmit={submitHandler}>
               <input type="text" class="width100" placeholder="Enter city name" required spellcheck="false" onkeyup={searchHandler}/>

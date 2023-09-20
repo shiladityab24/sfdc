@@ -51,5 +51,21 @@ button{
     outline: none;
     font-size: 24px;
     border-radius: 8px;
-    color: white;
+    color: #ffffff;
+}
+
+.success-msg {
+    color: #155724;
+    background: #d4edda;
+    border-radius: 5px;
+    padding: 12px;
+    margin: 12px;
+}
+
+.error-msg {
+    color: #721c24;
+    background: #f8d7da;
+    border-radius: 5px;
+    padding: 12px;
+    margin: 12px;
 }
