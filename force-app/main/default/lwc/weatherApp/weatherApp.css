@@ -1,0 +1,55 @@
+.app {
+    background: #091f43;
+    height: 100vh;
+}
+
+.app-card{
+    background: #ffffff;
+    max-width: 400px;
+    min-width: 375;
+    border-radius: 8px;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    font-size: 20px;
+    color: #091f43;
+    padding: 16px;
+    border: 1px solid #ccc;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+input {
+    text-align: center;
+    padding: 16px;
+    height: 55px;
+    outline: none;
+    font-size: 24px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+input::placeholder{
+    color: #bfbfbf;
+}
+
+.width100{
+    width: 100%;
+}
+
+button{
+    width: 100%;
+    background: #ed2144;
+    height: 55px;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    border-radius: 8px;
+    color: white;
+}
