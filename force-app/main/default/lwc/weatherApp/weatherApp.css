@@ -102,3 +102,7 @@ footer{
     width: 100%;
     padding: 16px;
 }
+
+.weatherImp{
+    max-width: 125px;
+}
