@@ -69,3 +69,18 @@ button{
     padding: 12px;
     margin: 12px;
 }
+
+.text-center{
+    text-align: center;
+}
+
+.temperature{
+    font-size: 60px;
+    font-weight: 200;
+    line-height: normal;
+}
+
+.description, .location {
+    font-size: 24px;
+    line-height: 32px;
+}
