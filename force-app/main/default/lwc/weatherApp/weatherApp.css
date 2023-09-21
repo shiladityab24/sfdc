@@ -1,6 +1,6 @@
 .app {
     background: #091f43;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .app-card{
