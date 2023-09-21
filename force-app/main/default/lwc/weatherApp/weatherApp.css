@@ -1,31 +1,29 @@
-.app {
+
+.app{
     background: #091f43;
     min-height: 100vh;
-}
-
-.app-card{
+  }
+  .app-card{
     background: #ffffff;
     max-width: 400px;
-    min-width: 375;
+    min-width: 375px;
     border-radius: 8px;
-}
-
-.flex-center{
+  }
+  .flex-center{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-header{
-    font-size: 20px;
+  }
+  
+  header{
     color: #091f43;
     padding: 16px;
-    border: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
     font-size: 28px;
     font-weight: 500;
-}
-
-input {
+  }
+  
+  input {
     text-align: center;
     padding: 16px;
     height: 55px;
@@ -33,17 +31,14 @@ input {
     font-size: 24px;
     border-radius: 8px;
     border: 1px solid #ccc;
-}
-
-input::placeholder{
-    color: #bfbfbf;
-}
-
-.width100{
+  }
+  input::placeholder{
+    color:#bfbfbf;
+  }
+  .width100{
     width: 100%;
-}
-
-button{
+  }
+  button{
     width: 100%;
     background: #ed2144;
     height: 55px;
@@ -51,58 +46,51 @@ button{
     outline: none;
     font-size: 24px;
     border-radius: 8px;
-    color: #ffffff;
-}
-
-.success-msg {
+    color: white;
+  }
+  .success-msg{
     color: #155724;
-    background: #d4edda;
-    border-radius: 5px;
-    padding: 12px;
-    margin: 12px;
-}
-
-.error-msg {
+      background: #d4edda;
+      border-radius: 5px;
+      padding: 12px;
+      margin: 12px;
+  }
+  .error-msg{
     color: #721c24;
     background: #f8d7da;
     border-radius: 5px;
     padding: 12px;
     margin: 12px;
-}
-
-.text-center{
+  }
+  .text-center{
     text-align: center;
-}
-
-.temperature{
+  }
+  .temperature{
     font-size: 60px;
-    font-weight: 200;
-    line-height: normal;
-}
-
-.description, .location {
+      font-weight: 700;
+      line-height: normal;
+      padding-top: 24px;
+  }
+  .description, .location{
     font-size: 24px;
     line-height: 32px;
-}
-
-footer{
+    padding-top: 20px;
+  }
+  footer{
     display: flex;
     justify-content: space-around;
     text-align: center;
     border-top: 1px solid #ccc;
-}
-
-.feels_like{
+  }
+  .feels_like{
     width: 100%;
-    padding: 16px;
-}
-
-.humidity{
+      padding: 16px;
+  }
+  .humidity{
     border-left: 1px solid #ccc;
     width: 100%;
     padding: 16px;
-}
-
-.weatherImp{
+  }
+  .weatherImg{
     max-width: 125px;
-}
+  }
