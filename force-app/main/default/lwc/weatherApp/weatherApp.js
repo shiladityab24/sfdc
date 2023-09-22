@@ -1,5 +1,5 @@
 import { LightningElement } from 'lwc';
-const API_KEY = 'fd386428ac134167f8cdd28236c54310'
+import getWeatherDetails from '@salesforce/apex/weatherAppController.getWeatherDetails';
 import WEATHER_ICON from '@salesforce/resourceUrl/weatherAppIcons'
 export default class WeatherApp extends LightningElement {
   clearIcon = WEATHER_ICON + '/weatherAppIcons/clear.svg'
@@ -40,17 +40,25 @@ export default class WeatherApp extends LightningElement {
     this.isError = false
     this.loadingText = 'Fetching weather details...'
     console.log("cityName", this.cityName)
-    //inside this will call our api
-
-    const URL = `https://api.openweathermap.org/data/2.5/weather?q=${this.cityName}&units=metric&appid=${API_KEY}`
+    getWeatherDetails({input:this.cityName}).then(result=>{
+      this.weatherDetails(JSON.parse(result))
+    }).catch((error)=>{
+      console.error(error)
+      this.response = null
+      this.loadingText = "Something went wrong"
+      this.isError = true
+    })
+    //Below is client side calling
+   
+    /*const URL = `https://api.openweathermap.org/data/2.5/weather?q=${this.cityName}&units=metric&appid=${API_KEY}`
     fetch(URL).then(res=>res.json()).then(result=>{
         console.log(JSON.stringify(result))
         this.weatherDetails(result)
     }).catch((error)=>{
-        console.error(error)
-        this.loadingText = "Something went wrong"
-        this.isError = true
-    })
+      console.error(error)
+      this.loadingText = "Something went wrong"
+      this.isError = true
+    })*/
   }
 
   weatherDetails(info){
