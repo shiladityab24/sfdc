@@ -20,6 +20,8 @@ export default class WeatherApp extends LightningElement {
   cityName = ''
   loadingText = ''
   isError = false
+  response
+
 
   get loadingClasses(){
     return this.isError ? 'error-msg':'success-msg';
@@ -57,6 +59,40 @@ export default class WeatherApp extends LightningElement {
       this.loadingText = `${this.cityName} isn't a valid city name`
     } else {
       this.loadingText = ''
+      this.isError = false
+      const city = info.name
+      const country = info.sys.country
+      const {description, id} = info.weather[0]
+      const {temp, feels_like, humidity} = info.main
+      if(id=== 800){
+        this.weatherIcon = this.clearIcon
+      }else if( (id>=200 && id <=232) || (id>=600 && id<=622)){
+        this.weatherIcon = this.stormIcon
+      }else if( id>=701 && id<=781){
+        this.weatherIcon = this.hazeIcon
+      }else if(id >=801 && id<=804){
+        this.weatherIcon = this.cloudIcon
+      } else if((id >=500 && id<=531) || (id>=300 && id<=321)){
+        this.weatherIcon = this.rainIcon
+      } else {}
+
+      this.response = {
+        city: city,
+        temperature: Math.floor(temp),
+        description: description,
+        location: `${city},${country}`,
+        feels_like: feels_like,
+        humidity: `${humidity}%`
+
+      }
     }
+  }
+
+  backHandler(){
+    this.response = null
+    this.cityName = ''
+    this.loadingText = ''
+    this.isError = false
+    this.weatherIcon = ''
   }
 }

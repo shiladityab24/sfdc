@@ -3,46 +3,52 @@
     <div class="app flex-center">
         <div class="app-card">
           <header class="flex-center">
+            <template if:true={response}>
+              <img src={arrowBackIcon} alt="back arrow" onclick={backHandler} class="slds-m-right_medium cursor"/>
+            </template>
             <h1>Weather App</h1>
           </header>
           <template if:true={loadingText}>
             <div class={loadingClasses}>{loadingText}</div>
           </template>
-          <section class="slds-m-around_large">
-            <form onsubmit={submitHandler}>
-              <input type="text" class="width100" placeholder="Enter city name" required spellcheck="false" onkeyup={searchHandler}/>
-              <button type="submit" class="slds-m-top_large">Search</button>
-            </form>
-          </section>
-          
+          <template if:false={response}>
+            <section class="slds-m-around_large">
+              <form onsubmit={submitHandler}>
+                <input type="text" class="width100" placeholder="Enter city name" required spellcheck="false" onkeyup={searchHandler}/>
+                <button type="submit" class="slds-m-top_large">Search</button>
+              </form>
+            </section>
+          </template>
+          <template if:true={response}>
           <section class="slds-m-around_large text-center">
-            <img src={cloudIcon} alt="weather icon" class="weatherImg">
+            <img src={weatherIcon} alt="weather icon" class="weatherImg">
             <div class="temperature">
-              <span>12</span>
+              <span>{response.temperature}</span>
               <span>°</span>C
             </div>
-            <div class="description">clear sky</div>
+            <div class="description">{response.description}</div>
             <div class="location">
               <img src={mapIcon} alt="location icon">
-              <span>London, GB</span>
+              <span>{response.location}</span>
             </div>
           </section>
           <footer>
             <div class="feels_like">
               <div>
                 <img src={thermometerIcon} alt="thermometer icon">
-                <div>11°C</div>
+                <div>{response.feels_like}<span>°C</span></div>
               </div>
               <p>Feels like</p>
             </div>
             <div class="humidity">
               <div>
                 <img src={dropletIcon} alt="droplet icon">
-                <div>83%</div>
+                <div>{response.humidity}</div>
               </div>
               <p>Humidity</p>
             </div>
           </footer>
+        </template>
         </div>
     </div>
 
