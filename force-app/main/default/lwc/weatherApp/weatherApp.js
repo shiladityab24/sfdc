@@ -12,10 +12,6 @@ export default class WeatherApp extends LightningElement {
   stormIcon = WEATHER_ICON + '/weatherAppIcons/storm.svg'
   thermometerIcon = WEATHER_ICON + '/weatherAppIcons/thermometer.svg'
   arrowBackIcon = WEATHER_ICON + '/weatherAppIcons/arrow-back.svg'
-  
-
-
-
 
   cityName = ''
   loadingText = ''

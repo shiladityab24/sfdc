@@ -1,12 +1,13 @@
 
-.app{
+  .app{
     background: #091f43;
     min-height: 100vh;
+    padding: 12px;
   }
   .app-card{
     background: #ffffff;
     max-width: 400px;
-    min-width: 375px;
+    min-width: 350px;
     border-radius: 8px;
   }
   .flex-center{
